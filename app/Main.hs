@@ -2,7 +2,13 @@ module Main where
 
 import Text.HTML.Scalpel
 import ProfScrapeLib
+import Graphics.Rendering.Chart.Easy
+import Graphics.Rendering.Chart.Backend.Cairo
+--import Data.Csv
+--import qualified Data.ByteString.Lazy as BSL
+--import Report
 
+titles = ["Professors"]
 schools :: [String]
 schools = [
           "chemistry",
@@ -19,4 +25,17 @@ main = do
      counts <- mapM numProfessors schools
      let results = zip schools counts
      mapM_ (\x -> putStrLn $ (fst x) ++ ": " ++ ((show.snd) x)) results
-
+     
+ 
+     {-toFile def "example11_big.png" $ do
+         layout_title .= "Sample Bars"
+         layout_title_style . font_size .= 10
+         layout_x_axis . laxis_generate .= autoIndexAxis (map fst results)
+         plot $ fmap plotBars $ bars schools $ (show.snd counts)
+     --BSL.write "report.csv" $ encode results
+     --writeFile "some_html.html" (generateReport results)
+     --generateReport results
+     
+--countGetter :: [(String, String, Maybe Int)] -> Int
+--countGetter = map snd
+-}

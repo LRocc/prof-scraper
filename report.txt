@@ -1,30 +1,38 @@
-<Insert Student Name Here>
-GUID:
-Date:
+Lorenzo Roccato
+GUID: 2265986r
+Date: 24/11/2020
 
 -- write what you want in here -- this is just some filler text --
 500 words max
 
 For this report, I am comparing my experiences with Haskell and
-Python.  In particular, I have used the Scalpel scraping library in
-Haskell, and the equivalent scrapy library in Python.
+GoLang.  In particular, I have used the Scalpel scraping library in
+Haskell, and the equivalent scrapy library in GoLang.
 
-Code size: Functional code in general (and Haskell in particular) is
-  highly concise. This comes from powerful features like higher order
-  functions on lists- much more concise than for/while loop
-  control-flow structures in Python. Also, high-level operators and
-  functions are provided in the standard libraries (like Data.List).
+Code size: 
+From what i was able to observe, Haskell isn't necessarely optimised for shortening code lenght, but it mostly depends on the use case.
+in most cases it is able to achieve the same functionalities of a piece of code written in an imperative language with a lot less code, by avoiding assumptions and by providing significantly more guarantees due to its type system, it is mostly this type safe characteristic that often leads to more verbose implementations.
+Not only that,sometimes, when writing a piece of haskell code, it can be necessary to resort to imperative-style syntax to achieve a solution to a problem.
+See the use of do-notation for example, which can potentially lead to lenghtier solutions that the same solution written in an imperative language like, GoLang.
+In the specific case of web scraping, the size difference can be easily neglected, as a webscraper in golang can be written in 40 lines of code tops.
+Go is famously regarded as very simple. However, this simplicity becomes problematic in time. Programmers who use Go find themselves over and over again writing the same thing from a very low point of view as the language itself is very lean and domains that aren't served by libraries that are easy to glue onto the existing code base are very hard to find.
+ 
 
 
-Code readability: While Haskell code is particularly dense, it can be
-  difficult to read sometimes. Meaningful variable names might help.
+
+Code readability:
+According to Basili and Perricone, 1984. code size is directly proportional to the likelyhood of errors, and haskell can be very compact but as any other language, it depends on the ability of the person writing the code. Haskell does provide the tools to write eminently readable code, see syntactic sugar as an example, or do blocks or even writing meaningful variable names all contribute to greater code readability.
+Without any type of control structure, haskell code has to be broken down into smaller bite size functions, which undoutably makes the code very readable. 
+One sore note can be the use of recursion, as it ca be difficult sometimes to trace, but this is a valid statement in every language and not Haskell specific.
+Go is notoriusly easy to read, effective_go provides a very well defined langage structure that will make the langiage accessible and understanable even at a first glance. With that said, Go can be notoriusly verbose. With negatively impacs code readability.
 
 
 Code maintainability:
-  Bug fixes? Comments?
+  Haskell's strong typing eliminates many type compatibility errors which are caught at compile time.
+  A strong and statically enforced separation between a core domain model’s functions and types and connections to the outside world is something that Haskell brings to the table that other languages clearly don't. This makes the haskell code base easy to Test and QC as the only real exposure to the otside word inpurities happens only when dealing with the uncontrolled IO. 
+Golang provides a strong testing framework that is highly usable an easy to implement, which helps a lot when trying to correct and catch bugs within the code base. In opposition to Haskelll Go is intentionally a weak typed language.Go in general encourages programming by writing code rather than programming by writing types.
 
-
-Toolchain support: Does stack work as well as pip? Is there as much
-  online support for Haskell as for Python? Does this affect developer
-  productivity at all?
+Toolchain support: 
+Adding dependencies to either stack.yaml or package.yaml is more labour intensive comapred to goModules, which are entirely handled automatically , except in some edge cases, through a CLI. 
+With Go, a single binary also avoids library dependency issues.
 

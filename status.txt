@@ -1,14 +1,21 @@
-<Insert Student Name Here>
-GUID:
-Date:
+Lorenzo Roccato
+GUID: 2265986r
+Date: 18/11/2020
 200 words max
 Some questions to consider:
 
 Does your code build properly with "stack build"?
+Yes
 
 Are there any parts of the specification you did not implement in part
 A?
+No
 
 For the 'stretch' part B, which libraries did you use and what kind of
 output did you generate?
+I tried Using Blaze to generate an html page, but couldn't. The code was left commented inside Report.hs to avoid errors generated when compiling.
+Blaze seemed like the easiest library to use in this case, the documentation was hard to read through and there was a lack of example that stopped me from understanding how to proceed.
+i then took another approach and tried producing a barchart using Chart and Chart.cairo, couldn't figure it out.
+
+But please feel free to through it as i belive there's some potential for partial credits. 
 

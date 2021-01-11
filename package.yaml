@@ -5,6 +5,8 @@ license:             BSD3
 author:              "Jeremy Singer"
 maintainer:          "Jeremy.Singer@glasgow.ac.uk"
 copyright:           "2020 Jeremy Singer"
+owner:               "Lorenzo Roccato"
+studentID:           "2265986r"
 
 extra-source-files:
 - README.md
@@ -24,6 +26,8 @@ dependencies:
 - split
 - mtl
 - http-client
+- Chart-cairo
+- Chart
 
 library:
   source-dirs: src
@@ -38,6 +42,8 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - prof-scraper
+    - Chart
+    - Chart-cairo
 
 tests:
   prof-scraper-test:
@@ -51,3 +57,7 @@ tests:
     - prof-scraper
     - tasty
     - tasty-hunit
+    - blaze-html
+    - type-of-html
+    - Chart-cairo
+    - Chart
